@@ -14,6 +14,7 @@ public class HttpControllerTest {
 
 	private static final String TAG = "HttpControllerTest"; 
 	
+	//localhost:8000/blog/http/lombok
 	@GetMapping("/http/lombok")
 	public String lombokTest() {
 		Member m= Member.builder().username("cxxerry").password("0200").email("cxxerry@gmail.com").build();
