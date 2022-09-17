@@ -14,8 +14,16 @@ import javax.persistence.ManyToOne;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data				//getter,setter가 없기 때문에 
+@NoArgsConstructor 				//빈생성자 
+@AllArgsConstructor				//전체 생성자
 @Entity
 public class Board {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)			// 넘버링 전략을 IDENTITY로 잡고 auto_increment를 쓰겠다. 
 	private int id; 
@@ -29,7 +37,7 @@ public class Board {
 	@ColumnDefault("0")
 	private int count;			//	조회수
 	
-	@ManyToOne					//Many = Board, One = User   즉, 여러 개의 게시글은 한 명의 유저에 의해 쓰일 수 있다 
+	@ManyToOne			//Many = Board, One = User   즉, 여러 개의 게시글은 한 명의 유저에 의해 쓰일 수 있다 
  	@JoinColumn(name="userId")
 	private User user; 			//DB는 오브젝트를 저장할 수 없다. FK, 자바는 오브젝트를 저장할 수 있다 
 	
