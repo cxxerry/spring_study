@@ -22,7 +22,7 @@ spring:
   jpa:
     open-in-view: true
     hibernate:
-      ddl-auto: create      #프로젝트를 실행할 때마다 데이터를 지우고 새로 테이블을 만든다. #최초에만 create로 설정하고 나중에는 update로 바꿔야한다. 
+      ddl-auto: update     #프로젝트를 실행할 때마다 데이터를 지우고 새로 테이블을 만든다. #최초에만 create로 설정하고 나중에는 update로 바꿔야한다. 
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl      #엔티티를 만들 때, 즉 테이블을 만들 때 변수명 그대로 입력한다
       use-new-id-generator-mappings: false      #false를 사용해 JPA가 사용하는 기본 넘버링 전략을 따라가지 않는다  
